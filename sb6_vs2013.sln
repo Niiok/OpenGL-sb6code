@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "julia", "build\vs2013\julia.vcxproj", "{327CB98D-D74D-4039-A472-A62E6E75AA17}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -366,6 +366,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movingtri", "build\vs2013\m
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sb6_vs2013", "src\sb6\sb6_vs2013.vcxproj", "{ADDFF1E2-C5D4-4217-A5B3-96ECED2C3584}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AOpenGL", "AOpenGL\AOpenGL.vcxproj", "{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -967,8 +969,19 @@ Global
 		{ADDFF1E2-C5D4-4217-A5B3-96ECED2C3584}.Release|Win32.Build.0 = Release|Win32
 		{ADDFF1E2-C5D4-4217-A5B3-96ECED2C3584}.Release|x64.ActiveCfg = Release|x64
 		{ADDFF1E2-C5D4-4217-A5B3-96ECED2C3584}.Release|x64.Build.0 = Release|x64
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Debug|Win32.Build.0 = Debug|Win32
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Debug|x64.ActiveCfg = Debug|x64
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Debug|x64.Build.0 = Debug|x64
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|Win32.ActiveCfg = Release|Win32
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|Win32.Build.0 = Release|Win32
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|x64.ActiveCfg = Release|x64
+		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EF089C8-1E54-441F-9F85-9E1C7FBDE590}
 	EndGlobalSection
 EndGlobal
