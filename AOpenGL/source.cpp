@@ -3,6 +3,7 @@
 #include "vertex.h"
 #include "fragment.h"
 
+GLuint compile_shaders(void);
 
 class my_application : public sb6::application
 {
@@ -27,6 +28,7 @@ public:
 		rendering_program = compile_shaders();
 		glGenVertexArrays(1, &vertex_array_object);
 		glBindVertexArray(vertex_array_object);
+		glPointSize(50.0f);
 	}
 
 	void shutdown() override
@@ -41,33 +43,33 @@ private:
 
 };
 
-	GLuint compile_shaders(void)
-	{
-		GLuint vertex_shader;
-		GLuint fragment_shader;
-		GLuint program;
+GLuint compile_shaders(void)
+{
+	GLuint vertex_shader;
+	GLuint fragment_shader;
+	GLuint program;
 
-		//extern const GLchar *vertex_shader_source[];
-		//extern const GLchar *fragment_shader_source[];
+	extern const GLchar *vertex_shader_source[];
+	extern const GLchar *fragment_shader_source[];
 
-		vertex_shader = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertex_shader, 1, vertex_shader_source, NULL);
-		glCompileShader(vertex_shader);
+	vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertex_shader, 1, vertex_shader_source, NULL);
+	glCompileShader(vertex_shader);
+	
+	fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragment_shader, 1, fragment_shader_source, NULL);
+	glCompileShader(fragment_shader);
 
-		fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragment_shader, 1, fragment_shader_source, NULL);
-		glCompileShader(fragment_shader);
+	program = glCreateProgram();
+	glAttachShader(program, vertex_shader);
+	glAttachShader(program, fragment_shader);
+	glLinkProgram(program);
 
-		program = glCreateProgram();
-		glAttachShader(program, vertex_shader);
-		glAttachShader(program, fragment_shader);
-		glLinkProgram(program);
+	glDeleteShader(vertex_shader);
+	glDeleteShader(fragment_shader);
 
-		glDeleteShader(vertex_shader);
-		glDeleteShader(fragment_shader);
-
-		return program;
-	}
+	return program;
+}
 
 
 
