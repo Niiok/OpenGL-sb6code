@@ -4,7 +4,7 @@ static const GLchar* fragment_shader_source[] =
 {
 	"	#version 430 core						\n"
 	"											\n"
-	"	out vec4 color							\n"
+	"	out vec4 color;							\n"
 	"											\n"
 	"	void main(void)							\n"
 	"	{										\n"

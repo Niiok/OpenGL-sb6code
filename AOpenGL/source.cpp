@@ -20,7 +20,7 @@ public:
 
 		glUseProgram(rendering_program);
 
-		glDrawArrays(GL_POINTS, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	void startup() override
