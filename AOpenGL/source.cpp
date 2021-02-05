@@ -18,7 +18,7 @@ public:
 		};
 		glClearBufferfv(GL_COLOR, 0, color);
 
-		//glUseProgram(rendering_program);
+		glUseProgram(rendering_program);
 
 		glDrawArrays(GL_POINTS, 0, 3);
 	}
@@ -28,7 +28,7 @@ public:
 		rendering_program = compile_shaders();
 		glGenVertexArrays(1, &vertex_array_object);
 		glBindVertexArray(vertex_array_object);
-		//glPointSize(50.0f);
+		glPointSize(50.0f);
 	}
 
 	void shutdown() override
@@ -49,8 +49,8 @@ GLuint compile_shaders(void)
 	GLuint fragment_shader;
 	GLuint program;
 
-	//extern const GLchar *vertex_shader_source[];
-	//extern const GLchar *fragment_shader_source[];
+	extern const GLchar *vertex_shader_source[];
+	extern const GLchar *fragment_shader_source[];
 
 	vertex_shader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertex_shader, 1, vertex_shader_source, NULL);
