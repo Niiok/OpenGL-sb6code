@@ -1,7 +1,7 @@
 #include "sb6.h"
 #include <math.h>
-#include "vertex.h"
-#include "fragment.h"
+//#include <assert.h>
+#include "shader.h"
 
 GLuint compile_shaders(void);
 
@@ -20,6 +20,24 @@ public:
 
 		glUseProgram(rendering_program);
 
+		GLfloat spin_speed = 1.0f;
+		GLfloat attrib[] = {
+			(float)sin(currentTime * spin_speed) * 0.5f,
+			(float)cos(currentTime * spin_speed) * 0.5f,
+			0.0f, 0.0f
+		};
+		glVertexAttrib4fv(0, attrib);
+
+
+		GLfloat vs_color[] = {
+			(float)0.5f,//tan(currentTime+0.5f) * 0.5f,
+			(float)sin(currentTime+0.5f) * 0.5f,
+			(float)cos(currentTime+0.5f) * 0.5f,
+			0.0f
+		};
+		glVertexAttrib4fv(1, vs_color);
+
+
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
@@ -29,6 +47,7 @@ public:
 		glGenVertexArrays(1, &vertex_array_object);
 		glBindVertexArray(vertex_array_object);
 		glPointSize(50.0f);
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
 
 	void shutdown() override
@@ -42,34 +61,6 @@ private:
 	GLuint vertex_array_object;
 
 };
-
-GLuint compile_shaders(void)
-{
-	GLuint vertex_shader;
-	GLuint fragment_shader;
-	GLuint program;
-
-	extern const GLchar *vertex_shader_source[];
-	extern const GLchar *fragment_shader_source[];
-
-	vertex_shader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertex_shader, 1, vertex_shader_source, NULL);
-	glCompileShader(vertex_shader);
-	
-	fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragment_shader, 1, fragment_shader_source, NULL);
-	glCompileShader(fragment_shader);
-
-	program = glCreateProgram();
-	glAttachShader(program, vertex_shader);
-	glAttachShader(program, fragment_shader);
-	glLinkProgram(program);
-
-	glDeleteShader(vertex_shader);
-	glDeleteShader(fragment_shader);
-
-	return program;
-}
 
 
 

@@ -1,8 +1,15 @@
+#pragma once
+
 #include "sb6.h"
 
 static const GLchar* vertex_shader_source[] =
 {
 	"	#version 430 core															\n"
+	"																				\n"
+	"	layout (location = 0) in vec4 offset;										\n"
+	"	layout (location = 1) in vec4 color;										\n"
+	"																				\n"
+	"	out vec4 vs_color;															\n"
 	"																				\n"
 	"	void main(void)																\n"
 	"	{																			\n"
@@ -10,6 +17,8 @@ static const GLchar* vertex_shader_source[] =
 	"										 vec4(-0.25, -0.25, 0.5, 1.0),			\n"
 	"										 vec4(0.25, 0.25, 0.5, 1.0));			\n"
 	"																				\n"
-	"		gl_Position = vertices[gl_VertexID];									\n"
+	"		gl_Position = vertices[gl_VertexID] + offset;							\n"
+	"																				\n"
+	"		vs_color = color;														\n"
 	"	}																			\n"
 };

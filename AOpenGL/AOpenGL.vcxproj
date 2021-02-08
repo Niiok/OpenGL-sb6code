@@ -147,10 +147,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source.cpp" />
-    <ClCompile Include="vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fragment.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="shader\fragment.h" />
+    <ClInclude Include="shader\Tcontrol.h" />
+    <ClInclude Include="shader\Tevaluation.h" />
+    <ClInclude Include="shader\vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
