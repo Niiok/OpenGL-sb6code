@@ -12,6 +12,6 @@ static const GLchar* fragment_shader_source[] =
 	"											\n"
 	"	void main(void)							\n"
 	"	{										\n"
-	"		color = vec4(0.0, 0.8, 1.0, 1.0);//vs_color;//	\n"
+	"		color = vec4(0.0, 0.8, 1.0, 1.0);	\n"
 	"	}										\n"
 };
