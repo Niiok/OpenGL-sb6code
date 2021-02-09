@@ -46,7 +46,7 @@ public:
 		rendering_program = compile_shaders();
 		glGenVertexArrays(1, &vertex_array_object);
 		glBindVertexArray(vertex_array_object);
-		glPointSize(50.0f);
+		glPointSize(5.0f);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
 

@@ -4,6 +4,7 @@
 #include "shader/fragment.h"
 #include "shader/Tcontrol.h"
 #include "shader/Tevaluation.h"
+#include"shader/geometry.h"
 #include <vector>
 
 void shader_check(GLuint shader);
@@ -14,12 +15,14 @@ GLuint compile_shaders(void)
 	GLuint fragment_shader;
 	GLuint Tcontrol_shader;
 	GLuint Tevaluation_shader;
+	GLuint geometry_shader;
 	GLuint program;
 
 	extern const GLchar* vertex_shader_source[];
 	extern const GLchar* fragment_shader_source[];
 	extern const GLchar* Tcontrol_shader_source[];
 	extern const GLchar* Tevaluation_shader_source[];
+	extern const GLchar* geometry_shader_source[];
 
 	vertex_shader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertex_shader, 1, vertex_shader_source, NULL);
@@ -39,17 +42,26 @@ GLuint compile_shaders(void)
 	glCompileShader(Tevaluation_shader);
 	shader_check(Tevaluation_shader);
 
+	geometry_shader = glCreateShader(GL_GEOMETRY_SHADER);
+	glShaderSource(geometry_shader, 1, geometry_shader_source, NULL);
+	glCompileShader(geometry_shader);
+	shader_check(geometry_shader);
+
+
+
 	program = glCreateProgram();
 	glAttachShader(program, vertex_shader);
 	glAttachShader(program, fragment_shader);
 	glAttachShader(program, Tcontrol_shader);
 	glAttachShader(program, Tevaluation_shader);
+	glAttachShader(program, geometry_shader);
 	glLinkProgram(program);
 
 	glDeleteShader(vertex_shader);
 	glDeleteShader(fragment_shader);
 	glDeleteShader(Tcontrol_shader);
 	glDeleteShader(Tevaluation_shader);
+	glDeleteShader(geometry_shader);
 	if (glGetError()) glfwTerminate();
 
 	return program;
