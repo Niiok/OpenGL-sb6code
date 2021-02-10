@@ -47,7 +47,7 @@ public:
 		glGenVertexArrays(1, &vertex_array_object);
 		glBindVertexArray(vertex_array_object);
 		glPointSize(5.0f);
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
 
 	void shutdown() override
