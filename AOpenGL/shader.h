@@ -52,8 +52,8 @@ GLuint compile_shaders(void)
 	program = glCreateProgram();
 	glAttachShader(program, vertex_shader);
 	glAttachShader(program, fragment_shader);
-	glAttachShader(program, Tcontrol_shader);
-	glAttachShader(program, Tevaluation_shader);
+	//glAttachShader(program, Tcontrol_shader);
+	//glAttachShader(program, Tevaluation_shader);
 	//glAttachShader(program, geometry_shader);
 	glLinkProgram(program);
 

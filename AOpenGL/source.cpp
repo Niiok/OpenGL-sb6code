@@ -38,7 +38,7 @@ public:
 		glVertexAttrib4fv(1, vs_color);
 
 
-		glDrawArrays(GL_PATCHES, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	void startup() override
