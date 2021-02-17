@@ -34,7 +34,7 @@ static const GLchar* vertex_shader_source[] =
 	"										vec4(0.0, 1.0, 0.0, 1.0),				\n"
 	"										vec4(0.0, 0.0, 1.0, 1.0));				\n"
 	"																				\n"
-	"		gl_Position = vertices[gl_VertexID]; //+ offset;							\n"
+	"		gl_Position = vertices[gl_VertexID] + offset;							\n"
 	"																				\n"
 	"		vs_color = colors[gl_VertexID];											\n"
 	"	}																			\n"

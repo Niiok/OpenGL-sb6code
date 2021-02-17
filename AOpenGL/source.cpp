@@ -38,7 +38,7 @@ public:
 		};
 		glVertexAttrib4fv(1, vs_color);
 
-		vmath::mat4 transform = vmath::rotate((float)cos(currentTime)*360.0f, (float)sin(currentTime)*360.0f, 0.0f);
+		vmath::mat4 transform = vmath::rotate(0.0f, 0.0f, (float)tan(currentTime)*10.0f);
 		
 		for (int i = 2; i <= 5; i++)
 		{
