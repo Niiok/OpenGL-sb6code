@@ -1,5 +1,6 @@
 #include "sb6.h"
 #include <math.h>
+#include "vmath.h"
 //#include <assert.h>
 #include "shader.h"
 
@@ -37,6 +38,12 @@ public:
 		};
 		glVertexAttrib4fv(1, vs_color);
 
+		vmath::mat4 transform = vmath::rotate((float)cos(currentTime)*360.0f, (float)sin(currentTime)*360.0f, 0.0f);
+		
+		for (int i = 2; i <= 5; i++)
+		{
+			glVertexAttrib4fv(i, transform[i - 2]);
+		}
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
