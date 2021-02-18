@@ -38,12 +38,15 @@ public:
 		};
 		glVertexAttrib4fv(1, vs_color);
 
+
 		vmath::mat4 transform = vmath::rotate(0.0f, 0.0f, (float)tan(currentTime)*10.0f);
 		
 		for (int i = 2; i <= 5; i++)
 		{
 			glVertexAttrib4fv(i, transform[i - 2]);
 		}
+
+		glVertexAttrib4fv(6, eye);
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
@@ -63,9 +66,38 @@ public:
 		glDeleteProgram(rendering_program);
 	}
 
+
+
 private:
 	GLuint rendering_program;
 	GLuint vertex_array_object;
+	vmath::vec4 eye = vmath::vec4(0.0f, 0.0f, -1.0f, 1.0f);
+
+	void onKey(int key, int action)
+	{
+		if (action == GLFW_PRESS)
+		{
+			switch (key)
+			{
+			case GLFW_KEY_UP:
+				eye[1]-=0.1f;
+				break;
+
+			case GLFW_KEY_DOWN:
+				eye[1]+=0.1f;
+				break;
+
+			case GLFW_KEY_LEFT:
+				eye[0]+=0.1f;
+				break;
+
+			case GLFW_KEY_RIGHT:
+				eye[0]-=0.1f;
+				break;
+
+			}
+		}
+	}
 
 };
 
