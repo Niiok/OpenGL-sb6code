@@ -38,15 +38,18 @@ public:
 		};
 		glVertexAttrib4fv(1, vs_color);
 
-
+		
 		vmath::mat4 transform = vmath::rotate(0.0f, 0.0f, (float)tan(currentTime)*10.0f);
 		
+		/*
 		for (int i = 2; i <= 5; i++)
 		{
 			glVertexAttrib4fv(i, transform[i - 2]);
 		}
+		*/
+		glUniformMatrix4fv(17, 1, GL_FALSE, transform);
 
-		glVertexAttrib4fv(6, eye);
+		glVertexAttrib4fv(2, eye);
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
