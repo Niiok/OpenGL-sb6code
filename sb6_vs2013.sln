@@ -369,6 +369,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sb6_vs2013", "src\sb6\sb6_v
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AOpenGL", "AOpenGL\AOpenGL.vcxproj", "{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL", "SDL\SDL.vcxproj", "{362D4011-5A1D-4857-9A8F-F82535E67C75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -977,6 +979,14 @@ Global
 		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|Win32.Build.0 = Release|Win32
 		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|x64.ActiveCfg = Release|x64
 		{8A965B9E-F44E-4CBD-B82C-51B70B3BA292}.Release|x64.Build.0 = Release|x64
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Debug|Win32.ActiveCfg = Debug|Win32
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Debug|Win32.Build.0 = Debug|Win32
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Debug|x64.ActiveCfg = Debug|x64
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Debug|x64.Build.0 = Debug|x64
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Release|Win32.ActiveCfg = Release|Win32
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Release|Win32.Build.0 = Release|Win32
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Release|x64.ActiveCfg = Release|x64
+		{362D4011-5A1D-4857-9A8F-F82535E67C75}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
